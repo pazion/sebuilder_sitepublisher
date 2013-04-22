@@ -1,0 +1,71 @@
+{
+  "type": "script",
+  "seleniumVersion": "2",
+  "formatVersion": 1,
+  "steps": [
+    {
+      "type": "get",
+      "url": "http://flowtrend.pazion.net/nl/home"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "link text",
+        "value": "Inloggen"
+      }
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "xpath",
+        "value": "//form[@id='loginForm']/table"
+      }
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "email"
+      },
+      "text": "peter@pazion.nl"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "password"
+      },
+      "text": "noizap12"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "xpath",
+        "value": "//a[@id='login']//span[normalize-space(.)='Inloggen']"
+      }
+    },
+    {
+      "type": "assertText",
+      "locator": {
+        "type": "xpath",
+        "value": "//div[@class='container']/div[5]/section/header/h1"
+      },
+      "text": "Your account"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "xpath",
+        "value": "//div[@class='container']//a[normalize-space(.)='Uitloggen']"
+      }
+    },
+    {
+      "type": "assertText",
+      "locator": {
+        "type": "xpath",
+        "value": "//div[@class='container']//a[normalize-space(.)='Inloggen']"
+      },
+      "text": "Inloggen"
+    }
+  ]
+}
