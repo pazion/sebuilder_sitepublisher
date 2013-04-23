@@ -1,0 +1,37 @@
+{
+  "type": "script",
+  "seleniumVersion": "2",
+  "formatVersion": 1,
+  "steps": [
+    {
+      "type": "get",
+      "url": "http://sitepublisher.pazion.net/nl/home"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "link text",
+        "value": "Blog"
+      }
+    },
+    {
+      "type": "verifyTextPresent",
+      "text": "Lees meer"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "link text",
+        "value": "Lees meer"
+      }
+    },
+    {
+      "type": "verifyText",
+      "locator": {
+        "type": "link text",
+        "value": "Back"
+      },
+      "text": "Back"
+    }
+  ]
+}
